@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Latitude:
+  = @hit.latitude
+%p
+  %b Longitude:
+  = @hit.longitude
+%p
+  %b Country:
+  = @hit.country
+%p
+  %b Ant:
+  = @hit.ant
+
+= link_to 'Edit', edit_hit_path(@hit)
+\|
+= link_to 'Back', hits_path

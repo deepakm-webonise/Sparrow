@@ -1,0 +1,22 @@
+= form_for @hit do |f|
+  - if @hit.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@hit.errors.count, "error")} prohibited this hit from being saved:"
+      %ul
+        - @hit.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :latitude
+    = f.text_field :latitude
+  .field
+    = f.label :longitude
+    = f.text_field :longitude
+  .field
+    = f.label :country
+    = f.text_field :country
+  .field
+    = f.label :ant
+    = f.text_field :ant
+  .actions
+    = f.submit 'Save'

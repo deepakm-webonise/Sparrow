@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b In url:
+  = @ant.in_url
+%p
+  %b Slug:
+  = @ant.slug
+%p
+  %b Clicks:
+  = @ant.clicks
+%p
+  %b Snapshot:
+  = @ant.snapshot
+%p
+  %b Title:
+  = @ant.title
+
+= link_to 'Edit', edit_ant_path(@ant)
+\|
+= link_to 'Back', ants_path

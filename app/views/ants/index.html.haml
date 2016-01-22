@@ -1,0 +1,29 @@
+%h1 Listing ants
+
+%table
+  %thead
+    %tr
+      %th In url
+      %th Slug
+      %th Clicks
+      %th Snapshot
+      %th Title
+      %th
+      %th
+      %th
+
+  %tbody
+    - @ants.each do |ant|
+      %tr
+        %td= ant.in_url
+        %td= ant.slug
+        %td= ant.clicks
+        %td= link_to ant_url(ant), ant_url(ant), target: :_blank
+        %td= ant.title
+        %td= link_to 'Show', ant
+        %td= link_to 'Edit', edit_ant_path(ant)
+        %td= link_to 'Destroy', ant, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Ant', new_ant_path
