@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :hits
+  resources :ants, only: [:index, :create]
 
-  resources :ants, except: [:show]
   root 'ants#index'
-  match "/:slug" => "ants#show", :via => [:get]
+  match '/:slug' => 'ants#show', via: [:get]
 end

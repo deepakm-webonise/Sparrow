@@ -1,29 +1,27 @@
-%h1 Listing ants
+.col-lg-6.col-lg-offset-3.col-md-6.col-sm-8.col-sm-offset-2.col-xs-12
+  = form_for @ant, id: 'ant_url_form',remote: true do |f|
+    .input-group
+      %input#ant_in_url.form-control{placeholder: 'https://ant-url.herokuapp.com', type: 'text', name: 'ant[in_url]'}
+        %span.input-group-btn
+          = f.submit 'Crush it!', class: 'btn btn-default', 'data-validation-length' => "min4"
+  .ant-result.alert.hide
+.top-links
+  .col-lg-6.col-lg-offset-3.col-md-6.col-sm-8.col-sm-offset-2.col-xs-12
+    %h3.text-center
+      Top Links
+    %table.table.table-striped
+      %thead
+        %tr
+          %th #
+          %th.hidden-xs Url
+          %th Ant-url
+          %th Clicks
 
-%table
-  %thead
-    %tr
-      %th In url
-      %th Slug
-      %th Clicks
-      %th Snapshot
-      %th Title
-      %th
-      %th
-      %th
-
-  %tbody
-    - @ants.each do |ant|
-      %tr
-        %td= ant.in_url
-        %td= ant.slug
-        %td= ant.clicks
-        %td= link_to ant_url(ant), ant_url(ant), target: :_blank
-        %td= ant.title
-        %td= link_to 'Show', ant
-        %td= link_to 'Edit', edit_ant_path(ant)
-        %td= link_to 'Destroy', ant, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Ant', new_ant_path
+      %tbody
+        - @ants.each_with_index do |ant, index|
+          %tr
+            %td= index + 1
+            %td.hidden-xs= link_to truncate(ant.in_url), ant.in_url, title: ant.in_url,target: '_blank'
+            %td= link_to ant_url(ant), ant_url(ant), title: ant_url(ant),target: '_blank'
+            %td
+              .badge= ant.clicks

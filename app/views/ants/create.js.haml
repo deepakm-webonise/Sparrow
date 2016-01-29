@@ -1,0 +1,5 @@
+$(".ant-result").empty()
+- if @ant.errors.any?
+  $(".ant-result").removeClass('hide').removeClass('alert-info').addClass('alert-danger').append("#{error_messages(@ant)}")
+- else
+  $(".ant-result").removeClass('hide').removeClass('alert-danger').addClass('alert-info').append("#{ant_url_success_link(@ant).html_safe}")
