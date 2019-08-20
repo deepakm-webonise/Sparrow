@@ -24,7 +24,7 @@ end
 
 group :development do
   gem 'byebug', '6.0.2'
-  gem 'rubocop', '0.32.1'
+  gem 'rubocop', '0.67.1'
   gem 'awesome_print', '1.6.1'
   gem 'quiet_assets', '1.1.0'
   # gem 'xray-rails', '0.1.17'
