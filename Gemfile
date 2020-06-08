@@ -11,7 +11,7 @@ gem 'turbolinks', '2.5.3'
 gem 'jbuilder', '2.3.1'
 gem 'sdoc', '0.4.1', group: :doc
 gem 'config', '1.0.0'
-gem 'geocoder', '1.2.14'
+gem 'geocoder', '1.6.3'
 group :development, :test do
   gem 'sqlite3'
   gem 'spring', '1.3.6'
