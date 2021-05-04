@@ -6,6 +6,7 @@ Bundler.require(*Rails.groups)
 
 module AntUrl
   class Application < Rails::Application
+    config.active_record.belongs_to_required_by_default = false
     config.generators do |g|
       g.orm :active_record
       g.test_framework :rspec
@@ -14,6 +15,5 @@ module AntUrl
       g.stylesheets false
       g.fixture_replacement :factory_girl, dir: 'spec/factories'
     end
-    config.active_record.raise_in_transactional_callbacks = true
   end
 end

@@ -1,3 +1,3 @@
-class Hit < ActiveRecord::Base
+class Hit < ApplicationRecord
   belongs_to :ant
 end
