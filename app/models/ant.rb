@@ -1,4 +1,4 @@
-class Ant < ActiveRecord::Base
+class Ant < ApplicationRecord
   has_many :hits
   validates :in_url, presence: { message: 'Please type the valid url!' }
   # validates_format_of :in_url, with: URI::regexp

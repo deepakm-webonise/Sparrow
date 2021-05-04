@@ -1,4 +1,4 @@
-class CreateAnts < ActiveRecord::Migration
+class CreateAnts < ActiveRecord::Migration[4.2]
   def change
     create_table :ants do |t|
       t.string :in_url
